@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css" />
+  </head>
+  <body>
+    <!-- 로딩 -->
+    <div id="loading" class="card">
+      <img src="../static/images/ghlogo.svg" class="card__logo" />
+      <div class="card__title">SNS 미니 스토어</div>
+    </div>
+
+    <!-- 로그인 -->
+    <div id="login" class="login">
+      <div class="login__header">
+        <div class="login__title">SNS 미니 스토어</div>
+        <img src="../static/images/ghlogo.svg" class="login__logo" />
+      </div>
+      <div class="login__form">
+        <input
+          type="text"
+          id="username"
+          class="login__input login__input--username"
+          placeholder="아이디"
+        />
+        <input
+          type="password"
+          id="password"
+          class="login__input login__input--password"
+          placeholder="비밀번호"
+        />
+        <button type="submit" class="login__button">로그인</button>
+      </div>
+      <div class="login__links">
+        <a href="#" class="login__link login__link--signup">아이디 찾기</a>
+        <a href="#" class="login__link login__link--reset">비밀번호 찾기</a>
+      </div>
+    </div>
+  </body>
+</html>
