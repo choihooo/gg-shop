@@ -1,0 +1,102 @@
+.find-id__closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.find-id__logo {
+  position: absolute;
+  left: 16px;
+  top: 20px;
+}
+.find-id__container {
+  position: relative;
+  margin: 0px 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.find-id__description {
+  color: #757575;
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.find-id__form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0px 32px;
+}
+
+.find-id__input {
+  border-radius: 5px;
+  border: 0.5px solid #5112ab;
+  background: #fff;
+  flex-shrink: 0;
+  color: #b0b0b0;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 9px 14px;
+}
+
+.find-id__input::placeholder {
+  color: #adb5bd; /* 연한 회색 텍스트 */
+}
+
+.find-id__button {
+  margin-top: 12px;
+  padding: 12px;
+  background-color: #5112ab;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.find-id__success {
+  color: #5112ab;
+  font-size: 14px;
+}
+.find-id__info {
+  width: 300px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.find-id__user-info {
+  color: #757575;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 11px;
+}
+
+.find-id__login-button {
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+  height: 50px;
+  background: #5112ab;
+}
+
+.find-id__user-id {
+  color: #000;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}

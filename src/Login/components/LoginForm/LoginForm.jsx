@@ -1,15 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./LoginForm.module.css";
+import useUserStore from "../../../core/store";
 
 function LoginForm() {
-  const [username, setUsername] = useState("");
+  const storedUsername = useUserStore((state) => state.username);
+  const [username, setUsername] = useState(storedUsername || "");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // 로그인 로직을 여기에 추가하세요
     console.log("Username:", username, "Password:", password);
   };
+
+  useEffect(() => {
+    setUsername(storedUsername);
+  }, [storedUsername]);
 
   return (
     <div className={styles["login-form"]}>

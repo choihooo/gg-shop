@@ -1,0 +1,134 @@
+.reset-pw__closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.reset-pw__logo {
+  position: absolute;
+  left: 16px;
+  top: 20px;
+}
+
+.reset-pw__container {
+  position: relative;
+  margin: 0px 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.reset-pw__description {
+  color: #757575;
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.reset-pw__form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0px 32px;
+}
+
+.reset-pw__input {
+  border-radius: 5px;
+  border: 0.5px solid #5112ab;
+  background: #fff;
+  flex-shrink: 0;
+  color: #b0b0b0;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 9px 14px;
+}
+
+.reset-pw__input::placeholder {
+  color: #adb5bd; /* 연한 회색 텍스트 */
+}
+
+.reset-pw__button {
+  margin-top: 12px;
+  padding: 12px;
+  background-color: #5112ab;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset-pw__success {
+  color: #5112ab;
+  font-size: 14px;
+}
+
+.reset-pw__info {
+  width: 300px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.reset-pw__user-info {
+  color: #757575;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 11px;
+}
+
+.reset-pw__login-button {
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+  height: 50px;
+  background: #5112ab;
+}
+
+.reset-pw__user-id {
+  color: #000;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.reseted-pw {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+  height: 100vh;
+}
+.reseted-pw__info {
+  color: #757575;
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.reseted-pw__button {
+  border-radius: 15px;
+  padding: 6px 19px;
+  background: #5112ab;
+  color: #fff;
+  border: none;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+}

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "../styles/Register.module.css";
 import RegisterForm from "../components/RegisterForm/RegisterForm";
 import RegisterTerms from "../components/RegisterTerms/RegisterTerms";
-
+import Modal from "../../shared/components/Modal/Modal";
 function Register() {
   const [formData, setFormData] = useState({
     userId: "",
@@ -15,7 +16,7 @@ function Register() {
   const [agreements, setAgreements] = useState({});
   const [modalMessage, setModalMessage] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const navigate = useNavigate();
   const handleInputChange = (name, value) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -30,18 +31,6 @@ function Register() {
   };
 
   const validateInputs = () => {
-    // 약관 개별 검사
-    if (!agreements[0]) {
-      setModalMessage("이용약관에 동의해주세요.");
-      setIsModalOpen(true);
-      return false;
-    }
-    if (!agreements[1]) {
-      setModalMessage("개인정보 처리방침에 동의해주세요.");
-      setIsModalOpen(true);
-      return false;
-    }
-
     if (!formData.userId) {
       setModalMessage("아이디를 입력해주세요.");
       setIsModalOpen(true);
@@ -67,6 +56,19 @@ function Register() {
       setIsModalOpen(true);
       return false;
     }
+
+    // 약관 개별 검사
+    if (!agreements[0]) {
+      setModalMessage("이용약관에 동의해주세요.");
+      setIsModalOpen(true);
+      return false;
+    }
+    if (!agreements[1]) {
+      setModalMessage("개인정보 처리방침에 동의해주세요.");
+      setIsModalOpen(true);
+      return false;
+    }
+
     return true;
   };
 
@@ -84,7 +86,11 @@ function Register() {
 
   return (
     <div className={styles["register"]}>
-      <div>
+      <div
+        onClick={() => {
+          navigate("/");
+        }}
+      >
         <img
           src="/close.svg"
           alt="닫기"
@@ -109,14 +115,7 @@ function Register() {
           회원가입하기
         </button>
       </div>
-      {isModalOpen && (
-        <div className={styles["modal"]}>
-          <div className={styles["modal-content"]}>
-            <div>{modalMessage}</div>
-            <button onClick={closeModal}>확인</button>
-          </div>
-        </div>
-      )}
+      <Modal isOpen={isModalOpen} message={modalMessage} onClose={closeModal} />
     </div>
   );
 }
