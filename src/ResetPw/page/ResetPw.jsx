@@ -69,7 +69,7 @@ function ResetPw() {
                 onChange={handleInputChange}
               />
               <input
-                type="text"
+                type="number"
                 name="phone"
                 placeholder="전화번호"
                 className={styles["reset-pw__input"]}

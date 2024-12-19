@@ -1,6 +1,6 @@
 .RegisterForm {
   width: 100vw;
-  margin-top: 22px;
+  margin-top: 68px;
 }
 
 .RegisterForm__title {
@@ -84,4 +84,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.register-form__phone {
+  position: relative;
+}
+
+.register__success {
+  position: absolute;
+  bottom: -20px;
+  color: #5112ab;
+  font-size: 14px;
 }

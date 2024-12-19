@@ -50,7 +50,7 @@ function RegisterForm({
         />
         <div className={styles["register-form__phone"]}>
           <input
-            type="text"
+            type="number"
             placeholder="000-0000-0000"
             name="phone"
             className={styles["register-form__input--phone"]}
@@ -64,12 +64,15 @@ function RegisterForm({
           >
             인증
           </button>
+          {isPhoneVerified && (
+            <div className={styles["register__success"]}>
+              <span>
+                <img src="/check.svg" alt="체크" />
+                인증되었습니다.
+              </span>
+            </div>
+          )}
         </div>
-        {isPhoneVerified && (
-          <div className={styles["verification-status"]}>
-            휴대폰 인증이 시도되었습니다.
-          </div>
-        )}
       </form>
     </div>
   );

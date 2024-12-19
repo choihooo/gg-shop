@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/FindId.module.css";
 import { useUserStore } from "../../core/store";
-import Modal from "../../shared/components/Modal/Modal"; // 모달 컴포넌트 불러오기
+import Modal from "../../shared/components/Modal/Modal";
 
 function FindId() {
   const navigate = useNavigate();
@@ -23,8 +23,8 @@ function FindId() {
 
   const handleVerifyClick = () => {
     if (!formData.name || !formData.phone) {
-      setModalMessage("이름과 전화번호를 모두 입력해 주세요."); // 모달 메시지 설정
-      setIsModalOpen(true); // 모달 열기
+      setModalMessage("이름과 전화번호를 모두 입력해 주세요.");
+      setIsModalOpen(true);
       return;
     }
 
@@ -34,8 +34,8 @@ function FindId() {
   };
 
   const closeModal = () => {
-    setIsModalOpen(false); // 모달 닫기
-    setModalMessage(""); // 모달 메시지 초기화
+    setIsModalOpen(false);
+    setModalMessage("");
   };
 
   return (
@@ -69,7 +69,7 @@ function FindId() {
             onChange={handleInputChange}
           />
           <input
-            type="text"
+            type="number"
             name="phone"
             placeholder="전화번호"
             className={styles["find-id__input"]}

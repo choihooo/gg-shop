@@ -20,11 +20,11 @@ function LoginWrapper() {
         <LoginForm />
         <FindLinks />
         <div className={styles["login-wrapper__line"]} />
-        <button className={styles["login-wrapper__register-btn"]}>
-          <Link to="/register" className={styles["login-wrapper__link"]}>
+        <Link to="/register" className={styles["login-wrapper__link"]}>
+          <button className={styles["login-wrapper__register-btn"]}>
             회원가입
-          </Link>
-        </button>
+          </button>
+        </Link>
       </div>
       <div className={styles["app-download"]}>
         <img className={styles["app-download__img"]} src="/mobile-icon.svg" />

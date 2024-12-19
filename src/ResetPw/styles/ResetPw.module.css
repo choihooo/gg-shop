@@ -2,6 +2,7 @@
   position: absolute;
   top: 10px;
   right: 10px;
+  cursor: pointer;
 }
 
 .reset-pw__logo {
@@ -42,14 +43,14 @@
   border: 0.5px solid #5112ab;
   background: #fff;
   flex-shrink: 0;
-  color: #b0b0b0;
+
   font-size: 12px;
   font-weight: 400;
   padding: 9px 14px;
 }
 
 .reset-pw__input::placeholder {
-  color: #adb5bd; /* 연한 회색 텍스트 */
+  color: #b0b0b0;
 }
 
 .reset-pw__button {

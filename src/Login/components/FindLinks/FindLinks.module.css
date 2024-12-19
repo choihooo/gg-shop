@@ -25,6 +25,7 @@
   color: #757575;
   font-size: 10px;
   transition: color 0.2s;
+  cursor: pointer;
 }
 
 .find-links__link:hover {
