@@ -77,3 +77,8 @@
   font-weight: 500;
   line-height: normal;
 }
+
+.login-wrapper__link {
+  text-decoration: none;
+  color: inherit;
+}

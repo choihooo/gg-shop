@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import LoginForm from "../LoginForm/LoginForm";
 import FindLinks from "../FindLinks/FindLinks";
 import styles from "./LoginWrapper.module.css";
@@ -19,7 +20,9 @@ function LoginWrapper() {
         <FindLinks />
         <div className={styles["login-wrapper__line"]} />
         <button className={styles["login-wrapper__register-btn"]}>
-          회원가입
+          <Link to="/register" className={styles["login-wrapper__link"]}>
+            회원가입
+          </Link>
         </button>
       </div>
       <div className={styles["app-download"]}>
