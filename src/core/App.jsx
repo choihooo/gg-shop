@@ -1,23 +1,14 @@
-import { useState, useEffect } from "react";
 import "./App.css";
-import SplashScreen from "../components/SplashScreen/SplashScrenn";
-import LoginWrapper from "../components/LoginWrapper/LoginWrapper";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "../Login/pages/Login";
 
 function App() {
-  const [isVisible, setIsVisible] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <div className="wrapper">
-      {isVisible ? <SplashScreen /> : <LoginWrapper />}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+      </Routes>
+    </Router>
   );
 }
 
