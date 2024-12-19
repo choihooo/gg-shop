@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./LoginForm.module.css";
-import useUserStore from "../../../core/store";
+import { useUserStore } from "../../../core/store";
 
 function LoginForm() {
   const storedUsername = useUserStore((state) => state.username);

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/FindId.module.css";
-import useUserStore from "../../core/store";
+import { useUserStore } from "../../core/store";
 import Modal from "../../shared/components/Modal/Modal"; // 모달 컴포넌트 불러오기
 
 function FindId() {

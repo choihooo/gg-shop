@@ -1,8 +1,11 @@
 import { create } from "zustand";
 
-const useUserStore = create((set) => ({
+export const useUserStore = create((set) => ({
   username: "",
   setUsername: (username) => set({ username }),
 }));
 
-export default useUserStore;
+export const useAppStore = create((set) => ({
+  hasVisited: false,
+  setVisited: () => set({ hasVisited: true }),
+}));
