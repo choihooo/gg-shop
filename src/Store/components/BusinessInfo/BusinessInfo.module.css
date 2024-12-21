@@ -1,0 +1,78 @@
+.business-form__input-wrapper {
+  width: 297px;
+  height: 423px;
+}
+.business-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.business-form__profile .profile-img {
+  width: 194px;
+  height: 194px;
+  border-radius: 50%;
+}
+
+.business-form__title {
+  margin-top: 18px;
+  color: #757575;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.business-form__group-title {
+  color: #757575;
+  text-align: right;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.business-form__group {
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.business-form__group input,
+.select-box {
+  flex: 2;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.address-group,
+.account-group,
+.file-group {
+  display: flex;
+  align-items: center;
+}
+
+.search-button,
+.verify-button,
+.attach-button {
+  padding: 10px;
+  margin-left: 10px;
+  border: none;
+  background-color: #5112ab;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.submit-button {
+  background-color: #5112ab;
+  color: white;
+  border: none;
+  padding: 15px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 30px;
+}

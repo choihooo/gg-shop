@@ -1,0 +1,28 @@
+.store-layout {
+  display: grid;
+  grid-template-rows: 1fr 63px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.store-content {
+  overflow-y: auto;
+  margin: 0px 12px;
+  margin-top: 53px;
+  margin-bottom: 16px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.store-content p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.gg-shop-logo {
+  position: absolute;
+  margin-left: 16px;
+  margin-top: 20px;
+}

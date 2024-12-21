@@ -9,3 +9,13 @@ export const useAppStore = create((set) => ({
   hasVisited: false,
   setVisited: () => set({ hasVisited: true }),
 }));
+
+export const useTabStore = create((set) => ({
+  disabled: false,
+  setDisabled: (value) => set({ disabled: value }),
+}));
+
+export const useBusinessTypeStore = create((set) => ({
+  selectedType: "unselected",
+  setSelectedType: (type) => set({ selectedType: type }),
+}));

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styles from "./LoginForm.module.css";
 import { useUserStore } from "../../../core/store";
+import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
   const storedUsername = useUserStore((state) => state.username);
+  const navigate = useNavigate();
   const [username, setUsername] = useState(storedUsername || "");
   const [password, setPassword] = useState("");
 
@@ -33,7 +35,13 @@ function LoginForm() {
           onChange={(e) => setPassword(e.target.value)}
           className={styles["login-form__input"]}
         />
-        <button type="submit" className={styles["login-form__button"]}>
+        <button
+          type="submit"
+          className={styles["login-form__button"]}
+          onClick={() => {
+            navigate("/store");
+          }}
+        >
           로그인
         </button>
       </form>
