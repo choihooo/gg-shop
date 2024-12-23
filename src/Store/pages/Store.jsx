@@ -4,8 +4,11 @@ import { useBusinessTypeStore } from "../../core/store";
 import BottomNavigation from "../../shared/components/BottomNavigation/BottomNavigation";
 import styles from "../styles/Store.module.css";
 import BusinessTypeSelection from "../components/BusinessTypeSelection/BusinessTypeSelection";
-import BusinessInfo from "../components/BusinessInfo/BusinessInfo";
-// import NonBusinessInfo from "../components/NonBusinessInfo/NonBusinessInfo";
+import BusinessInput from "../components/BusinessInput/BusinessInput";
+import BusinessConfirm from "../components/BusinessConfirm/BusinessConfirm";
+import BusinessWaiting from "../components/BusinessWaiting/BusinessWaiting";
+import BusinessProfile from "../components/BusinessProfile/BusinessProfile";
+import PasswordEdit from "../components/PasswordEdit/PasswordEdit";
 
 function Store() {
   const { selectedType, setSelectedType } = useBusinessTypeStore();
@@ -16,11 +19,7 @@ function Store() {
   };
 
   const handleSubmit = () => {
-    if (selectedType === "business") {
-      navigate("/store/business");
-    } else if (selectedType === "non-business") {
-      navigate("/store/non-business");
-    }
+    navigate("/store/input");
   };
 
   return (
@@ -42,8 +41,11 @@ function Store() {
               />
             }
           />
-          <Route path="business" element={<BusinessInfo />} />
-          {/* <Route path="non-business" element={<NonBusinessInfo />} /> */}
+          <Route path="input" element={<BusinessInput />} />
+          <Route path="confirm" element={<BusinessConfirm />} />
+          <Route path="waiting" element={<BusinessWaiting />} />
+          <Route path="profile" element={<BusinessProfile />} />
+          <Route path="password-edit" element={<PasswordEdit />} />
         </Routes>
       </div>
       <BottomNavigation />

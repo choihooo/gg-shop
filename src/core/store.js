@@ -11,7 +11,7 @@ export const useAppStore = create((set) => ({
 }));
 
 export const useTabStore = create((set) => ({
-  disabled: false,
+  disabled: true,
   setDisabled: (value) => set({ disabled: value }),
 }));
 

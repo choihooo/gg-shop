@@ -28,7 +28,7 @@ function BottomNavigation() {
           }}
         >
           <img src={tab.icon} alt={tab.label} className={styles["nav-icon"]} />
-          <span className={styles["nav-label"]}>{tab.label}</span>
+          <div className={styles["nav-label"]}>{tab.label}</div>
         </div>
       ))}
     </div>
