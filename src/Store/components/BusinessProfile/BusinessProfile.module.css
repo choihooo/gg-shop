@@ -41,6 +41,7 @@
 .value {
   color: #757575;
   font-size: 12px;
+  margin-left: 4px;
 }
 
 .profile-content__title {

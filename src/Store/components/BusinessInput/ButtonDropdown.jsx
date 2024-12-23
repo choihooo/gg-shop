@@ -16,7 +16,6 @@ function ButtonDropdown({ options = [], defaultValue = "신한은행", onSelect 
     setIsOpen(false);
   };
 
-  // 드롭다운 외부 클릭시 닫기
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {

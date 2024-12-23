@@ -118,7 +118,7 @@
   color: white;
   border: none;
   font-size: 12px;
-  margin-top: 32px;
+  margin-top: 36px;
 }
 
 .business-form__group-content {
@@ -137,6 +137,6 @@
   font-family: Inter;
   font-size: 12px;
 
-  bottom: -30px;
+  bottom: -34px;
   left: -40px;
 }

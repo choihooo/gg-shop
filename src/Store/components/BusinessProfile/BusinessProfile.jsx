@@ -1,9 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./BusinessProfile.module.css";
+import { useBusinessTypeStore } from "../../../core/store";
 
 function BusinessProfile() {
   const navigate = useNavigate();
+  const { selectedType } = useBusinessTypeStore();
 
   const handlePasswordEdit = () => {
     navigate("/store/password-edit");
@@ -27,7 +29,9 @@ function BusinessProfile() {
         />
       </div>
       <div className={styles["profile-content"]}>
-        <div className={styles["profile-content__title"]}>사업자 정보</div>
+        <div className={styles["profile-content__title"]}>
+          {selectedType === "non-business" ? "비사업자 정보" : "사업자 정보"}
+        </div>
         <div className={styles["profile-info"]}>
           <div className={styles["profile-info__item"]}>
             <span className={styles["label"]}>아이디 :</span>
@@ -38,8 +42,16 @@ function BusinessProfile() {
             <span className={styles["value"]}>기존결제링크 보기</span>
           </div>
           <div className={styles["profile-info__item"]}>
-            <span className={styles["label"]}>사업자등록번호 :</span>
-            <span className={styles["value"]}>125-11-12345</span>
+            <span className={styles["label"]}>
+              {selectedType === "non-business"
+                ? "주민등록번호 :"
+                : "사업자등록번호 :"}
+            </span>
+            <span className={styles["value"]}>
+              {selectedType === "non-business"
+                ? "000000-1234567"
+                : "125-11-12345"}
+            </span>
           </div>
           <div className={styles["profile-info__item"]}>
             <span className={styles["label"]}>대표 :</span>

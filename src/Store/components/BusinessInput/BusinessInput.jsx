@@ -16,13 +16,14 @@ function BusinessInput() {
     address: "",
     addressDetail: "",
     bank: "신한은행",
+    idCardFile: "",
     accountNumber: "",
     businessFile: "",
   });
-  const handleFileUpload = (e) => {
+  const handleFileUpload = (e, fieldName) => {
     const file = e.target.files[0];
     if (file) {
-      setFormData({ ...formData, businessFile: file.name });
+      setFormData({ ...formData, [fieldName]: file.name });
     }
   };
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -61,18 +62,20 @@ function BusinessInput() {
       setIsModalOpen(true);
       return;
     }
-    if (!formData.businessFile) {
-      setModalMessage(
-        selectedType === "non-business"
-          ? "신분증을 첨부해 주세요."
-          : "사업자 등록증을 첨부해 주세요."
-      );
+    if (!formData.idCardFile) {
+      setModalMessage("신분증을 첨부해 주세요.");
+      setIsModalOpen(true);
+      return;
+    }
+    if (selectedType === "business" && !formData.businessFile) {
+      setModalMessage("사업자 등록증을 첨부해 주세요.");
       setIsModalOpen(true);
       return;
     }
 
     navigate("/store/confirm");
   };
+
   const closeModal = () => {
     setIsModalOpen(false);
     setModalMessage("");
@@ -154,7 +157,7 @@ function BusinessInput() {
         </div>
         <div
           className={styles["business-form__group"]}
-          style={{ marginBottom: "4px" }}
+          style={{ marginBottom: "8px" }}
         >
           <div className={styles["business-form__group-title"]}></div>
           <input
@@ -184,7 +187,7 @@ function BusinessInput() {
         </div>
         <div
           className={styles["business-form__group"]}
-          style={{ marginBottom: "4px" }}
+          style={{ marginBottom: "8px" }}
         >
           <div className={styles["business-form__group-title"]}></div>
           <input
@@ -195,16 +198,17 @@ function BusinessInput() {
             style={{ width: "149px" }}
           />
         </div>
-        <div className={styles["business-form__group"]}>
-          <div className={styles["business-form__group-title"]}>
-            {selectedType === "non-business" ? "신분증 :" : "사업자 등록증 :"}
-          </div>
+        <div
+          className={styles["business-form__group"]}
+          style={{ marginBottom: "4px" }}
+        >
+          <div className={styles["business-form__group-title"]}>신분증 :</div>
           <div className={styles["file-group"]}>
             <input
               type="text"
-              name="businessFile"
-              value={formData.businessFile}
-              onChange={handleFileUpload}
+              name="idCardFile"
+              value={formData.idCardFile}
+              onChange={(e) => handleFileUpload(e, "idCardFile")}
               readOnly
             />
             <label className={styles["attach-button"]}>
@@ -212,7 +216,7 @@ function BusinessInput() {
               <input
                 type="file"
                 style={{ display: "none" }}
-                onChange={handleFileUpload}
+                onChange={(e) => handleFileUpload(e, "idCardFile")}
               />
             </label>
             {selectedType === "non-business" ? (
@@ -225,6 +229,29 @@ function BusinessInput() {
             )}
           </div>
         </div>
+        {selectedType === "business" && (
+          <div className={styles["business-form__group"]}>
+            <div className={styles["business-form__group-title"]}>
+              사업자 등록증 :
+            </div>
+            <div className={styles["file-group"]}>
+              <input
+                type="text"
+                name="businessFile"
+                value={formData.businessFile}
+                readOnly
+              />
+              <label className={styles["attach-button"]}>
+                첨부
+                <input
+                  type="file"
+                  style={{ display: "none" }}
+                  onChange={(e) => handleFileUpload(e, "businessFile")}
+                />
+              </label>
+            </div>
+          </div>
+        )}
       </div>
       <button type="submit" className={styles["submit-button"]}>
         정보 등록

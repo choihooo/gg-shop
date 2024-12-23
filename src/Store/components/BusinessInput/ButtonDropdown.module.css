@@ -13,18 +13,19 @@
   border-radius: 5px;
   font-size: 12px;
   color: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center; /* 텍스트를 가운데 정렬 */
   padding: 0;
+  display: inline;
+  text-align: left;
+  padding-left: 10px;
   cursor: pointer;
-  position: relative; /* 화살표 배치를 위한 상대 위치 */
+  position: relative;
 }
 
 .dropdown-button img {
   position: absolute;
-  right: 4px; /* 화살표를 버튼 우측 끝에 배치 */
-  height: 12px;
+  right: 4px;
+  top: 10px;
+  height: 6px;
 }
 
 .dropdown-list {
