@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./BusinessInput.module.css";
-import ButtonDropdown from "./ButtonDropdown";
+import ButtonDropdown from "../../components/ButtonDropdown";
 import { useBusinessTypeStore } from "../../../core/store";
 import { useNavigate } from "react-router-dom";
 import Modal from "../../../shared/components/Modal/Modal";

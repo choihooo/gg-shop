@@ -36,7 +36,7 @@ function ButtonDropdown({ options = [], defaultValue = "신한은행", onSelect 
         type="button"
       >
         {selected}
-        <img src="/down.svg" alt="" srcset="" />
+        <img src="/down.svg" />
       </button>
 
       {isOpen && (

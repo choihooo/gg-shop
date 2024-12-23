@@ -1,0 +1,45 @@
+.layout-container {
+  display: grid;
+  grid-template-rows: 1fr 63px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.layout-content {
+  overflow-y: auto;
+  margin: 0px 12px;
+  margin-top: 53px;
+  margin-bottom: 16px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.layout-content p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.gg-shop-logo {
+  position: absolute;
+  margin-left: 16px;
+  margin-top: 20px;
+}
+
+.link-button {
+  width: 88px;
+  height: 28px;
+  color: white;
+  border-radius: 10px;
+  background: #5112ab;
+  border: none;
+  font-size: 12px;
+  position: absolute;
+  top: 17px;
+  right: 12px;
+}
+.full-page {
+  margin: 0px 12px;
+  margin-top: 52px;
+}

@@ -1,0 +1,59 @@
+.link-button {
+  background-color: #673ab7;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 20px auto;
+  display: block;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.add-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  width: 164px;
+  height: 217px;
+  cursor: pointer;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.plus-icon {
+  width: 129px;
+  height: 129px;
+  color: #ccc;
+  margin-top: 8px;
+}
+
+.add-item p {
+  margin: 20px 0 0;
+  font-size: 12px;
+  color: #757575;
+}
+
+.empty-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  gap: 30px;
+}
+
+.empty-text {
+  color: #757575;
+  text-align: center;
+  font-size: 15px;
+}

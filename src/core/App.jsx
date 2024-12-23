@@ -5,6 +5,8 @@ import Register from "../Register/pages/Register";
 import FindId from "../FindId/page/FindId";
 import ResetPw from "../ResetPw/page/ResetPw";
 import Store from "../Store/pages/Store";
+import Layout from "../shared/components/Layout/Layout";
+import Product from "../Product/pages/Product";
 
 function App() {
   return (
@@ -14,7 +16,13 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/find-id" element={<FindId />} />
         <Route path="/reset-pw" element={<ResetPw />} />
-        <Route path="/store/*" element={<Store />} /> {/* 중첩 라우트 설정 */}
+        <Route path="/store/*" element={<Layout />}>
+          <Route path="*" element={<Store />} />
+        </Route>
+
+        <Route path="/product/*" element={<Layout />}>
+          <Route path="*" element={<Product />} />
+        </Route>
       </Routes>
     </Router>
   );

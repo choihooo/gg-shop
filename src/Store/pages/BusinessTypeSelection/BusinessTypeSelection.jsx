@@ -1,7 +1,14 @@
 import React from "react";
 import styles from "./BusinessTypeSelection.module.css";
+import { useBusinessTypeStore } from "../../../core/store";
+import { useNavigate } from "react-router-dom";
 
-function BusinessTypeSelection({ selectedType, onSelect, onSubmit }) {
+function BusinessTypeSelection() {
+  const { selectedType, setSelectedType } = useBusinessTypeStore();
+  const navigate = useNavigate();
+  const onSubmit = () => {
+    navigate("/store/input");
+  };
   return (
     <div className={styles["business-selection"]}>
       <div className={styles["business-selection__title"]}>
@@ -16,7 +23,7 @@ function BusinessTypeSelection({ selectedType, onSelect, onSubmit }) {
           className={`${styles["business-selection__button"]} ${
             selectedType === "business" ? styles["active"] : ""
           }`}
-          onClick={() => onSelect("business")}
+          onClick={() => setSelectedType("business")}
         >
           {selectedType === "business" ? (
             <img src="/business-active.svg" alt="사업자 활성화" />
@@ -29,7 +36,7 @@ function BusinessTypeSelection({ selectedType, onSelect, onSubmit }) {
           className={`${styles["business-selection__button"]} ${
             selectedType === "non-business" ? styles["active"] : ""
           }`}
-          onClick={() => onSelect("non-business")}
+          onClick={() => setSelectedType("non-business")}
         >
           {selectedType === "non-business" ? (
             <img src="/non-business-active.svg" alt="비사업자 활성화" />
