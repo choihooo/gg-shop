@@ -9,7 +9,11 @@
   font-weight: 400;
   line-height: normal;
 }
-
+.business-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .business-selection__subtitle {
   margin-top: 12px;
 }
@@ -30,6 +34,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: 480px;
 }
 .business-selection__info-title {
   color: #000;

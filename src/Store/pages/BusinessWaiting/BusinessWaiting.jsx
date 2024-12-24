@@ -15,7 +15,7 @@ function BusinessWaiting() {
     return () => clearTimeout(timer);
   }, [navigate]);
   return (
-    <div className={styles["wrapper"]}>
+    <div className="wrapper">
       <div className={styles["title"]}>상점등록 승인신청을 완료했습니다</div>
       <div className={styles["info-wrapper"]}>
         <div className={styles["info-title"]}>

@@ -11,7 +11,7 @@ function BusinessConfirm() {
   };
 
   return (
-    <div>
+    <div className="wrapper">
       <div className={styles["title"]}>내 상점 정보 등록 완료</div>
       <div className={styles["sub-title-wrapper"]}>
         <div className={styles["sub-title"]}>

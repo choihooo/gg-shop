@@ -11,23 +11,25 @@ function Layout() {
     location.pathname === "/product" || location.pathname === "/product/none";
 
   return (
-    <div className={styles["layout-container"]}>
-      <img
-        src="/gh-logo.svg"
-        className={styles["gg-shop-logo"]}
-        alt="GGShop 로고"
-      />
-      {!isStorePage && (
-        <button className={styles["link-button"]}>보낸 결제 링크</button>
-      )}
-      <div
-        className={`${
-          isFullPage ? styles["full-page"] : styles["layout-content"]
-        }`}
-      >
-        <Outlet />
+    <div className="wrapper">
+      <div className={styles["layout-container"]}>
+        <img
+          src="/gh-logo.svg"
+          className={styles["gg-shop-logo"]}
+          alt="GGShop 로고"
+        />
+        {!isStorePage && (
+          <button className={styles["link-button"]}>보낸 결제 링크</button>
+        )}
+        <div
+          className={`${
+            isFullPage ? styles["full-page"] : styles["layout-content"]
+          }`}
+        >
+          <Outlet />
+        </div>
+        <BottomNavigation />
       </div>
-      <BottomNavigation />
     </div>
   );
 }
