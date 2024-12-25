@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./ProductItem.module.css";
 
-function ProductItem({ imgSrc, name, price }) {
+function ProductItem({ imgSrc, name, price, color = "white" }) {
   return (
-    <div className={styles["product-item"]}>
+    <div className={styles["product-item"]} style={{ backgroundColor: color }}>
       <img src={imgSrc} alt={name} className={styles["product-item__image"]} />
       <div className={styles["product-item__info"]}>
         <div className={styles["product-item__name"]}>

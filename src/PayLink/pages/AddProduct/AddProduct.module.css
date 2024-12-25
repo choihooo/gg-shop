@@ -1,0 +1,136 @@
+.add-wrapper {
+  display: grid;
+  grid-template-rows: 6fr 1fr;
+  height: 100%;
+  gap: 9px;
+  position: relative;
+}
+
+.add-product {
+  border-radius: 10px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-product__info {
+  width: 210px;
+}
+
+.add-product__image {
+  width: 218px;
+  height: 210px;
+  border-radius: 10px;
+  margin-top: 57px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background-color: inherit;
+}
+
+.add-product__summary {
+  border-radius: 10px 10px 0px 0px;
+  background: #d9d9d9;
+}
+.add-product__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 31px;
+}
+.add-product__group {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  color: #757575;
+  font-size: 12px;
+  gap: 4px;
+}
+
+.add-product__label {
+  text-align: right;
+  line-height: 1.5;
+}
+
+.add-product__value,
+.add-product__price-value {
+  line-height: 1.5;
+}
+
+.add-product__price-label {
+  line-height: 2;
+  text-align: right;
+}
+
+.add-product__price-value span {
+  color: #000;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.add-product__quantity {
+  margin-top: 25px;
+}
+.add-product__quantity label {
+  text-align: right;
+  line-height: 3;
+}
+
+.quantity-input {
+  border-radius: 3px;
+  border: 0.5px solid #757575;
+  background: #fff;
+  height: 29px;
+  width: 88px;
+  font-size: 20px;
+}
+
+.add-product__button {
+  border-radius: 40.963px;
+  border: 0.5px solid #a09e9e;
+  background: #5112ab;
+  width: 86px;
+  height: 82px;
+  color: #fff;
+  font-size: 13px;
+}
+
+.add-product__summary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.add-product__summary-info {
+  color: #757575;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.summary__group {
+  margin-top: 12px;
+}
+
+.summary__label {
+  color: #757575;
+  font-size: 17px;
+}
+
+.summary__total-value {
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.summary__total-value span {
+  font-size: 17px;
+  font-weight: 500;
+}

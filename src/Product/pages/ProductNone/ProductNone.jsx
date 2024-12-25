@@ -1,5 +1,5 @@
 import React from "react";
-import ProductItem from "../../components/ProductItem/ProductItem";
+import ProductItem from "../../../shared/components/ProductItem/ProductItem";
 import styles from "./ProductList.module.css";
 
 function ProductNone() {

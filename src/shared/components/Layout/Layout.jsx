@@ -8,7 +8,10 @@ function Layout() {
 
   const isStorePage = location.pathname.startsWith("/store");
   const isFullPage =
-    location.pathname === "/product" || location.pathname === "/product/none";
+    location.pathname === "/product" ||
+    location.pathname === "/product/none" ||
+    location.pathname === "/link" ||
+    location.pathname === "/link/add";
 
   return (
     <div className="wrapper">

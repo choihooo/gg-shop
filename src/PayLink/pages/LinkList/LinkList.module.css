@@ -1,0 +1,28 @@
+.link-list {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 4px;
+  height: 100%;
+}
+
+.link-list__items {
+  overflow-y: auto;
+}
+
+.link-list__plus {
+  display: flex;
+  justify-content: center;
+}
+
+.link-list__plus img {
+  width: 53px;
+  height: 53px;
+}
+
+.link-total {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  border-top: 1px solid #ddd;
+}

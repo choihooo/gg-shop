@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import ProductItem from "../../components/ProductItem/ProductItem";
+import ProductItem from "../../../shared/components/ProductItem/ProductItem";
 import styles from "./ProductList.module.css";
 
-function ProductNone() {
+function ProductList() {
   const navigate = useNavigate();
 
   const products = [
@@ -56,4 +56,4 @@ function ProductNone() {
   );
 }
 
-export default ProductNone;
+export default ProductList;

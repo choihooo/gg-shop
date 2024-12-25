@@ -7,6 +7,7 @@ import ResetPw from "../ResetPw/page/ResetPw";
 import Store from "../Store/pages/Store";
 import Layout from "../shared/components/Layout/Layout";
 import Product from "../Product/pages/Product";
+import PayLink from "../PayLink/pages/PayLink";
 
 function App() {
   return (
@@ -22,6 +23,10 @@ function App() {
 
         <Route path="/product/*" element={<Layout />}>
           <Route path="*" element={<Product />} />
+        </Route>
+
+        <Route path="/link/*" element={<Layout />}>
+          <Route path="*" element={<PayLink />} />
         </Route>
       </Routes>
     </Router>
