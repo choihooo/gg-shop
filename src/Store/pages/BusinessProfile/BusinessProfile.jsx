@@ -50,7 +50,7 @@ function BusinessProfile() {
             <span className={styles["value"]}>
               {selectedType === "non-business"
                 ? "000000-1234567"
-                : "125-11-12345"}
+                : "000-00-00000"}
             </span>
           </div>
           <div className={styles["profile-info__item"]}>
