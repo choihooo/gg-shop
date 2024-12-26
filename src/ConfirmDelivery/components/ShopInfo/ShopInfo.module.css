@@ -1,0 +1,37 @@
+.shop-info {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #fff;
+  margin: 0px 12px;
+  color: #757575;
+  font-size: 12px;
+}
+
+.shop-info__image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 25px;
+}
+
+.shop-info__details {
+  display: flex;
+  flex-direction: column;
+}
+
+.shop-info__row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.shop-info__label {
+  margin-right: 8px;
+}
+
+.shop-info__text {
+  margin-right: 24px;
+}
