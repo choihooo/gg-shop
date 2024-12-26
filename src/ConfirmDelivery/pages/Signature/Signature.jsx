@@ -9,33 +9,21 @@ function Signature() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [isSigned, setIsSigned] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false); // 모달 상태
-  const [modalMessage, setModalMessage] = useState(""); // 모달 메시지 상태
-  const [isVerified, setIsVerified] = useState(false); // 본인 인증 여부 상태
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
+  const [isVerified, setIsVerified] = useState(false);
+  const [showPlaceholder, setShowPlaceholder] = useState(true);
   const navigate = useNavigate();
-  useEffect(() => {
-    drawPlaceholderText();
-  }, []);
+
   const onCancle = () => {
     navigate("/confirm");
   };
-  // 서명 캔버스에 "확인 서명" 텍스트 그리기
-  const drawPlaceholderText = () => {
-    const canvas = sigCanvas.current.getCanvas();
-    const ctx = canvas.getContext("2d");
-    ctx.font = "12px Arial";
-    ctx.fillStyle = "#757575";
-    ctx.textAlign = "center";
-    ctx.fillText("확인 서명", canvas.width / 6, canvas.height / 6);
-  };
 
   const handleBegin = () => {
-    const canvas = sigCanvas.current.getCanvas();
-    const ctx = canvas.getContext("2d");
-    ctx.clearRect(0, 0, canvas.width, canvas.height); // 서명 시작 시 텍스트 지우기
+    setShowPlaceholder(false);
+    setIsSigned(true);
   };
 
-  // 본인 인증 버튼 클릭 시 검증
   const handleVerify = () => {
     if (!name) {
       setModalMessage("구매자 이름을 입력해 주세요.");
@@ -59,7 +47,7 @@ function Signature() {
       setModalMessage("서명을 완료해 주세요.");
       setModalOpen(true);
     } else {
-      alert("서명과 본인인증이 완료되었습니다.");
+      navigate("/confirm/complete");
     }
   };
 
@@ -67,7 +55,7 @@ function Signature() {
     <div className={styles["wrapper"]}>
       <img src="/gh-logo.svg" className={styles["logo"]} />
       <button className={styles["close-button"]} onClick={onCancle}>
-        <img src="/close.svg" />
+        <img src="/close.svg" alt="닫기 버튼" />
       </button>
       <div className={styles["signature-form"]}>
         <div className={styles["signature-info"]}>
@@ -100,15 +88,15 @@ function Signature() {
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
-          <button
-            className={styles["verify-button"]}
-            onClick={handleVerify} // 본인 인증 버튼 클릭
-          >
+          <button className={styles["verify-button"]} onClick={handleVerify}>
             본인 인증
           </button>
         </div>
 
         <div className={styles["signature-wrapper"]}>
+          {showPlaceholder && (
+            <div className={styles["signature-placeholder"]}>확인 서명</div>
+          )}
           <SignatureCanvas
             ref={sigCanvas}
             penColor="black"
@@ -119,10 +107,7 @@ function Signature() {
           />
         </div>
 
-        <button
-          className={styles["submit-button"]}
-          onClick={handleSubmit} // 완료 버튼 클릭 시 체크
-        >
+        <button className={styles["submit-button"]} onClick={handleSubmit}>
           완료
         </button>
       </div>
