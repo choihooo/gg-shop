@@ -1,10 +1,11 @@
 import React from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import BottomNavigation from "../../components/BottomNavigation/BottomNavigation";
 import styles from "./Layout.module.css";
 
 function Layout() {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const isStorePage = location.pathname.startsWith("/store");
   const isFullPage =
@@ -12,7 +13,12 @@ function Layout() {
     location.pathname === "/product/none" ||
     location.pathname === "/link" ||
     location.pathname === "/link/add" ||
-    location.pathname === "/link/make";
+    location.pathname === "/link/make" ||
+    location.pathname.startsWith("/send-link");
+
+  const handleSendLinkClick = () => {
+    navigate("/send-link");
+  };
 
   return (
     <div className="wrapper">
@@ -23,7 +29,12 @@ function Layout() {
           alt="GGShop 로고"
         />
         {!isStorePage && (
-          <button className={styles["link-button"]}>보낸 결제 링크</button>
+          <button
+            className={styles["link-button"]}
+            onClick={handleSendLinkClick}
+          >
+            보낸 결제 링크
+          </button>
         )}
         <div
           className={`${

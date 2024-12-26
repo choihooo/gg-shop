@@ -27,7 +27,3 @@
   transition: color 0.2s;
   cursor: pointer;
 }
-
-.find-links__link:hover {
-  color: #333;
-}
