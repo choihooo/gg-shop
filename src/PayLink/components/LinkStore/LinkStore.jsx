@@ -1,14 +1,7 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import styles from "./LinkTotal.module.css";
+import styles from "./LinkStore.module.css";
 
-function LinkTotal({ total }) {
-  const navigate = useNavigate();
-
-  const handleButtonClick = () => {
-    navigate("/link/make");
-  };
-
+function LinkStore({ total, onClick }) {
   return (
     <div className={styles["link-total"]}>
       <div className={styles["link-total__text"]}>
@@ -18,15 +11,12 @@ function LinkTotal({ total }) {
         </span>
         <span className={styles["link-total__won"]}>원</span>
       </div>
-      <button
-        className={styles["link-total__button"]}
-        onClick={handleButtonClick}
-      >
+      <button className={styles["link-total__button"]} onClick={onClick}>
         결제 링크 <br />
-        만들기
+        저장하기
       </button>
     </div>
   );
 }
 
-export default LinkTotal;
+export default LinkStore;

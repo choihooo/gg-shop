@@ -11,7 +11,8 @@ function Layout() {
     location.pathname === "/product" ||
     location.pathname === "/product/none" ||
     location.pathname === "/link" ||
-    location.pathname === "/link/add";
+    location.pathname === "/link/add" ||
+    location.pathname === "/link/make";
 
   return (
     <div className="wrapper">
