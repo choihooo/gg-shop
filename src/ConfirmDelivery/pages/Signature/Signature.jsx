@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import SignatureCanvas from "react-signature-canvas";
 import Modal from "../../../shared/components/Modal/Modal";
 import styles from "./Signature.module.css";
+import { useNavigate } from "react-router-dom";
 
 function Signature() {
   const sigCanvas = useRef({});
@@ -11,11 +12,13 @@ function Signature() {
   const [modalOpen, setModalOpen] = useState(false); // 모달 상태
   const [modalMessage, setModalMessage] = useState(""); // 모달 메시지 상태
   const [isVerified, setIsVerified] = useState(false); // 본인 인증 여부 상태
-
+  const navigate = useNavigate();
   useEffect(() => {
     drawPlaceholderText();
   }, []);
-
+  const onCancle = () => {
+    navigate("/confirm");
+  };
   // 서명 캔버스에 "확인 서명" 텍스트 그리기
   const drawPlaceholderText = () => {
     const canvas = sigCanvas.current.getCanvas();
@@ -63,7 +66,7 @@ function Signature() {
   return (
     <div className={styles["wrapper"]}>
       <img src="/gh-logo.svg" className={styles["logo"]} />
-      <button className={styles["close-button"]}>
+      <button className={styles["close-button"]} onClick={onCancle}>
         <img src="/close.svg" />
       </button>
       <div className={styles["signature-form"]}>
