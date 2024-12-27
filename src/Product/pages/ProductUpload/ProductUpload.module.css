@@ -1,10 +1,13 @@
 .product-upload {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .product-upload__close {
   position: absolute;
-  top: -30px;
+  top: -10px;
   right: -10px;
   cursor: pointer;
 }

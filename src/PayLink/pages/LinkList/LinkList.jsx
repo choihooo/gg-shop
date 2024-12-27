@@ -4,7 +4,22 @@ import styles from "./LinkList.module.css";
 import LinkItem from "../../../shared/components/LinkItem/LinkItem";
 import LinkTotal from "../../components/LinkTotal/LinkTotal";
 
-const items = []; // 아이템이 없을 때 테스트
+const items = [
+  {
+    image: "/ex1.jpeg",
+    name: "공사 비입니다.",
+    price: 1000000,
+    quantity: 1,
+    description: "아주 멋진 자동차 입니다. ㅋㅋㅋㅋㅋㅋㅋㅋ",
+  },
+  {
+    image: "/ex2.jpeg",
+    name: "공사 비입니다.",
+    price: 1000000,
+    quantity: 2,
+    description: "아주 멋진 자동차 입니다. ㅋㅋㅋㅋㅋㅋㅋㅋ",
+  },
+];
 
 function LinkList() {
   const navigate = useNavigate();
@@ -18,11 +33,23 @@ function LinkList() {
     navigate("/link/select");
   };
 
+  const handleItemClick = () => {
+    navigate("/link/add");
+  };
+
   return (
     <div className={styles["link-list"]}>
       <div className={styles["link-list__items"]}>
         {items.length > 0 ? (
-          items.map((item, index) => <LinkItem key={index} item={item} />)
+          items.map((item, index) => (
+            <div
+              key={index}
+              onClick={() => handleItemClick()}
+              className={styles["link-list__item"]}
+            >
+              <LinkItem item={item} />
+            </div>
+          ))
         ) : (
           <div className={styles["link-list__empty"]}>
             <p>등록된 상품이 없습니다.</p>
@@ -30,14 +57,14 @@ function LinkList() {
               onClick={handleAddClick}
               className={styles["link-list__add-button"]}
             >
-              <img src="/plus.svg" />
+              <img src="/plus.svg" alt="Add Item" />
             </button>
             <p>상품등록</p>
           </div>
         )}
         {items.length > 0 && (
           <div className={styles["link-list__plus"]} onClick={handleAddClick}>
-            <img src="plus.svg" alt="Add" />
+            <img src="plus.svg" alt="Add More" />
           </div>
         )}
       </div>

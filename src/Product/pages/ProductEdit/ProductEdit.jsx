@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styles from "./ProductEdit.module.css";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
 import Modal from "../../../shared/components/Modal/Modal";
@@ -14,6 +14,7 @@ function ProductEdit() {
   const [modalMessage, setModalMessage] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const fileInputRef = useRef(null); // 파일 업로드 input 참조
 
   // 입력값 변경 핸들러
   const handleInputChange = (e) => {
@@ -69,21 +70,33 @@ function ProductEdit() {
     navigate("/product"); // 삭제 후 상품 목록으로 이동
   };
 
+  // 파일 업로드 버튼 클릭 핸들러
+  const handleFileUploadClick = () => {
+    fileInputRef.current.click(); // 버튼 클릭 시 input 동작
+  };
+
   return (
     <div className={styles["product-edit"]}>
       <div className={styles["product-edit__image"]}>
-        <label htmlFor="file-upload">
-          <img
-            src="/ex1.jpeg"
-            alt="사진 수정"
-            className={styles["product-edit__image"]}
-          />
-        </label>
-        <input type="file" id="file-upload" style={{ display: "none" }} />
+        <img
+          src="/ex1.jpeg"
+          alt="사진 수정"
+          className={styles["product-edit__image"]}
+        />
       </div>
-      <button className={styles["product-edit__image-upload"]}>
+      <button
+        className={styles["product-edit__image-upload"]}
+        onClick={handleFileUploadClick} // 버튼 클릭 시 파일 업로드 실행
+      >
         사진 수정
       </button>
+      <input
+        type="file"
+        ref={fileInputRef} // useRef로 참조
+        id="file-upload"
+        style={{ display: "none" }} // input 숨김 처리
+      />
+
       <div className={styles["product-edit__form"]}>
         <div className={styles["product-edit__form-group"]}>
           <label

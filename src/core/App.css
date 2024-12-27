@@ -32,3 +32,17 @@ button {
   align-items: center;
   cursor: pointer;
 }
+
+input {
+  color: black;
+}
+
+input::placeholder {
+  color: #757575;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}

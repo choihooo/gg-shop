@@ -30,7 +30,7 @@ function AddProduct() {
   };
 
   const handleClose = () => {
-    navigate("/link/select"); // /link/select 경로로 이동
+    navigate(-1);
   };
 
   const totalPrice = price * (parseInt(quantity, 10) || 1);
