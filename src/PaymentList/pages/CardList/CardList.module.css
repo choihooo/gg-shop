@@ -2,20 +2,37 @@
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
-  border: 1px solid #d9d9d9;
+  border-radius: 10px;
   background-color: #fff;
-  font-family: "Arial", sans-serif;
+  height: 98%;
 }
 
 .header {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 2fr;
+  gap: 2px;
   font-weight: bold;
-  padding: 12px;
-  background-color: #e8e8e8;
   text-align: center;
 }
 
+.header span {
+  background-color: #d9d9d9;
+  height: 33px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 12px;
+}
+.header span:first-child {
+  border-top-left-radius: 10px;
+}
+
+/* 마지막 자식 - 오른쪽 상단 둥글게 */
+.header span:last-child {
+  border-top-right-radius: 10px;
+}
 .payment-item {
   border-bottom: 1px solid #ddd;
 }

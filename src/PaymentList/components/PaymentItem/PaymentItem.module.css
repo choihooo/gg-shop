@@ -1,0 +1,52 @@
+.payment-item {
+  border-bottom: 1px solid #757575;
+  color: #757575;
+  font-size: 12px;
+}
+
+.payment-item__summary {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  gap: 2px;
+  text-align: center;
+  height: 29px;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment-item__price {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+
+.payment-item__buyer,
+.payment-item__phone,
+.payment-item__price span {
+  font-size: 12px;
+}
+
+.payment-item__toggle-icon {
+  margin-left: 8px;
+}
+
+.payment-item__detail-group {
+  display: flex;
+  border-bottom: 1px dotted #757575;
+  border-top: 1px dotted #757575;
+  height: 29px;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+
+.payment-item__detail {
+  display: flex;
+  height: 29px;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+  margin-right: 40px;
+}
