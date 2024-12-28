@@ -1,0 +1,134 @@
+.wrapper {
+  display: grid;
+  height: calc(100vh - 107.5px);
+  gap: 7px;
+}
+
+.list-title {
+  color: #000;
+  text-align: center;
+  font-size: 15px;
+  margin: 6px 0px;
+  position: sticky;
+  z-index: 10;
+}
+.search-box {
+  display: flex;
+  margin-top: 12px;
+  border-radius: 15px;
+  border: 1px solid #b0b0b0;
+  background: #fff;
+  overflow: hidden;
+  padding: 6px 10px;
+  flex-shrink: 0;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  font-size: 14px;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 25px;
+}
+.button-wrapper button {
+  border-radius: 10px;
+  background: #5112ab;
+  width: 135px;
+  height: 51px;
+  color: #fff;
+  font-size: 13px;
+  border: none;
+}
+.search-box button {
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.search-box::placeholder {
+  color: #b0b0b0;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.list {
+  margin-top: 20px;
+  position: relative;
+  overflow-y: auto;
+}
+
+.select-wrapper {
+  border-radius: 10px 10px 0px 0px;
+  background: #d9d9d9;
+  height: 92px;
+}
+
+.filter-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #b0b0b0;
+  font-size: 14px;
+  margin-left: 12px;
+  margin-top: 18px;
+}
+
+.clear-btn {
+  border: none;
+  background-color: inherit;
+}
+
+.input-wrapper {
+  border-radius: 10px;
+  background: #d9d9d9;
+  padding: 18px 0px;
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  display: grid;
+  grid-template-columns: 1fr 250px;
+}
+.input-label {
+  color: #757575;
+  font-size: 12px;
+  text-align: right;
+  line-height: 2;
+}
+
+.input-url {
+  margin-left: 4px;
+  width: 220px;
+  color: #757575;
+  font-size: 12px;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.input-price {
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.input-name,
+.input-call {
+  color: #757575;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.input-price,
+.input-call,
+.input-name,
+.input-url {
+  margin-left: 8px;
+}

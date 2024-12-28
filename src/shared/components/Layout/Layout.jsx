@@ -14,6 +14,7 @@ function Layout() {
     location.pathname === "/link" ||
     location.pathname === "/link/add" ||
     location.pathname === "/link/make" ||
+    location.pathname === "/pay-list" ||
     location.pathname.startsWith("/send-link");
 
   const handleSendLinkClick = () => {

@@ -9,6 +9,7 @@ import Layout from "../shared/components/Layout/Layout";
 import Product from "../Product/pages/Product";
 import PayLink from "../PayLink/pages/PayLink";
 import ConfirmDelivery from "../ConfirmDelivery/pages/ConfirmDelivery";
+import SendList from "../SendList/pages/SendList";
 import PaymentList from "../PaymentList/pages/PaymentList";
 
 function App() {
@@ -32,10 +33,14 @@ function App() {
         </Route>
 
         <Route path="/send-link/*" element={<Layout />}>
-          <Route path="*" element={<PaymentList />} />
+          <Route path="*" element={<SendList />} />
         </Route>
 
         <Route path="/confirm/*" element={<ConfirmDelivery />} />
+
+        <Route path="/pay-list/*" element={<Layout />}>
+          <Route path="*" element={<PaymentList />} />
+        </Route>
       </Routes>
     </Router>
   );

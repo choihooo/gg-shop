@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./LinkModal.module.css";
 
-function LinkModal({ isOpen, message, onClose }) {
+function LinkModal({ isOpen, message, onClose, onConfirm }) {
   if (!isOpen) return null;
 
   return (
@@ -12,7 +12,7 @@ function LinkModal({ isOpen, message, onClose }) {
           <button onClick={onClose} className={styles["modal-cancle"]}>
             취소
           </button>
-          <button onClick={onClose} className={styles["modal-button"]}>
+          <button onClick={onConfirm} className={styles["modal-button"]}>
             확인
           </button>
         </div>

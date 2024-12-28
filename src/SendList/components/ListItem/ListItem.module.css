@@ -31,7 +31,7 @@
 .info-row {
   display: flex;
   display: grid;
-  grid-template-columns: 51px 178px;
+  grid-template-columns: 51px 190px;
   color: #757575;
   font-size: 12px;
 }

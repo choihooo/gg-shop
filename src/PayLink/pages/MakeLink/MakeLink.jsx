@@ -37,8 +37,8 @@ function MakeLink() {
   );
 
   // 링크 복사 후 모달 표시 및 페이지 이동
-  const handleLinkCopy = () => {
-    setModalMessage("링크가 복사되었습니다.");
+  const handleLinkStore = () => {
+    setModalMessage("링크가 보낸 결제 링크에 저장되었습니다.");
     setShowInputModal(true); // 기본 모달 열기
 
     setTimeout(() => {
@@ -125,7 +125,9 @@ function MakeLink() {
         ))}
         onClose={() => {
           setShowModal(false);
-          handleLinkCopy(); // 링크 복사 로직 실행
+        }}
+        onConfirm={() => {
+          handleLinkStore();
         }}
       />
 

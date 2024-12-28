@@ -1,0 +1,62 @@
+.wrapper {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  border: 1px solid #d9d9d9;
+  background-color: #fff;
+  font-family: "Arial", sans-serif;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-weight: bold;
+  padding: 12px;
+  background-color: #e8e8e8;
+  text-align: center;
+}
+
+.payment-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 40px;
+  align-items: center;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.details {
+  padding: 10px 12px;
+  background-color: #f9f9f9;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.toggle-icon {
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  background-color: #f3f3f3;
+  border-top: 1px solid #ddd;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: #666;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.tab-button.active {
+  color: #5112ab;
+  font-weight: bold;
+}

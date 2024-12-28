@@ -17,8 +17,8 @@ function BottomNavigation() {
       setActiveTab("/product");
     } else if (location.pathname.startsWith("/link")) {
       setActiveTab("/link");
-    } else if (location.pathname.startsWith("/confirm")) {
-      setActiveTab("/confirm");
+    } else if (location.pathname.startsWith("/pay-list")) {
+      setActiveTab("/pay-list");
     }
   }, [location.pathname]);
 
@@ -30,7 +30,12 @@ function BottomNavigation() {
       icon: "/product.svg",
       path: "/product",
     },
-    { id: "confirm", label: "결제 목록", icon: "/list.svg", path: "/confirm" },
+    {
+      id: "pay-list",
+      label: "결제 목록",
+      icon: "/list.svg",
+      path: "/pay-list",
+    },
     { id: "store", label: "내 상점", icon: "/store.svg", path: "/store" },
   ];
 
