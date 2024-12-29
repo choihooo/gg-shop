@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Confirm.module.css";
 import LinkItem from "../../../shared/components/LinkItem/LinkItem";
-import ShopInfo from "../../components/ShopInfo/ShopInfo";
+import ShopInfo from "../../../shared/components/ShopInfo/ShopInfo";
 import AltInfo from "../../components/AltInfo/AltInfo";
 import { useNavigate } from "react-router-dom";
 

@@ -11,6 +11,7 @@ import PayLink from "../PayLink/pages/PayLink";
 import ConfirmDelivery from "../ConfirmDelivery/pages/ConfirmDelivery";
 import SendList from "../SendList/pages/SendList";
 import PaymentList from "../PaymentList/pages/PaymentList";
+import PaymentLinkReceiver from "../PaymentLinkReceiver/pages/PaymentLinkReceiver";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         </Route>
 
         <Route path="/confirm/*" element={<ConfirmDelivery />} />
+        <Route path="/order/*" element={<PaymentLinkReceiver />} />
 
         <Route path="/pay-list/*" element={<Layout />}>
           <Route path="*" element={<PaymentList />} />

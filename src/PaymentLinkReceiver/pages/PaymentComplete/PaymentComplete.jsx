@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./Complete.module.css";
+import styles from "./PaymentComplete.module.css";
 import { useNavigate } from "react-router-dom";
 
-function Complete() {
+function PaymentComplete() {
   const navigate = useNavigate();
 
   return (
@@ -33,4 +33,4 @@ function Complete() {
   );
 }
 
-export default Complete;
+export default PaymentComplete;
