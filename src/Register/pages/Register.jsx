@@ -85,7 +85,7 @@ function Register() {
   };
 
   return (
-    <div className={styles["register"]}>
+    <div className={styles["wrapper"]}>
       <div
         onClick={() => {
           navigate("/");

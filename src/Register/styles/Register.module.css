@@ -4,18 +4,22 @@
   right: 10px;
   cursor: pointer;
 }
-
+.wrapper {
+  display: block;
+}
 .register__logo {
   position: absolute;
   left: 16px;
   top: 20px;
 }
+
 .register__button-wrapper {
   width: 100vw;
   display: flex;
   justify-content: center;
   padding-bottom: 50px;
 }
+
 .register__button {
   border-radius: 40.963px;
   border: 0.5px solid #a09e9e;
