@@ -73,3 +73,26 @@
   border: none;
   background-color: inherit;
 }
+
+.empty-message {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(217, 217, 217, 0.7);
+  z-index: 10;
+}
+
+.list {
+  position: relative;
+  z-index: 20; /* 리스트는 오버레이 위에 위치 */
+}
