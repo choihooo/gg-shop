@@ -1,6 +1,6 @@
 .wrapper {
   display: grid;
-  height: calc(100vh - 107.5px);
+  height: calc(100vh - 115px);
 }
 
 .search-box {

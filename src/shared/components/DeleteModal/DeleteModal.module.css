@@ -20,15 +20,18 @@
   position: relative;
   z-index: 101;
 }
+
 .modal p {
   margin-top: 10px;
 }
+
 .button-container {
   display: flex;
   justify-content: center;
   gap: 16px;
   margin-top: 60px;
 }
+
 .button-container button {
   width: 75px;
   height: 40px;
@@ -36,6 +39,7 @@
   cursor: pointer;
   border: none;
 }
+
 .delete-btn {
   background-color: #5112ab;
   color: white;

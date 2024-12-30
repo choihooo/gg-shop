@@ -40,7 +40,18 @@ function ListItem({ item, isSelected, onClick, onLongPress }) {
       console.log("드래그 감지 - 롱프레스 취소");
     }
   };
-
+  const renderLinkStatus = () => {
+    switch (item.linkRequired) {
+      case "필요":
+        return <div className={styles["warning"]}>수령확인 url 필요</div>;
+      case "확인":
+        return <div className={styles["complete"]}>수령확인 완료</div>;
+      case "":
+        return null;
+      default:
+        return null;
+    }
+  };
   const handleTouchEnd = () => {
     clearTimeout(pressTimer);
   };
@@ -72,8 +83,11 @@ function ListItem({ item, isSelected, onClick, onLongPress }) {
           >
             {item.complete ? "결제완료" : "미결제"} :
           </span>
-          <div className={styles["price"]}>
-            {item.amount.toLocaleString()}원
+          <div className={styles["info-row2"]}>
+            <div className={styles["price"]}>
+              {item.amount.toLocaleString()}원
+            </div>
+            {renderLinkStatus()}
           </div>
         </div>
       </div>

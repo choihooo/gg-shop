@@ -5,7 +5,7 @@ import ListItem from "../../components/ListItem/ListItem";
 import payments from "../../../data/payments";
 
 function PaymentLinkList() {
-  const [filter, setFilter] = useState("all");
+  const [filter, setFilter] = useState("all"); // 필터 상태 관리
   const [searchTerm, setSearchTerm] = useState("");
   const [appliedSearch, setAppliedSearch] = useState("");
 
@@ -16,14 +16,21 @@ function PaymentLinkList() {
     toggleItemSelection,
     resetSelection,
   } = usePaymentStore();
-
   const filteredPayments = payments.filter((payment) => {
     const matchesFilter =
       filter === "all" ||
       (filter === "미결제" && !payment.complete) ||
       (filter === "결제완료" && payment.complete);
-    const matchesSearch = payment.buyer.includes(appliedSearch);
+
+    const normalizedSearch = appliedSearch.replace(/[-\s]/g, ""); // 공백 및 '-' 제거
+    const normalizedPhone = payment.phone.replace(/[-\s]/g, ""); // 전화번호도 동일하게 처리
+
+    const matchesSearch =
+      payment.buyer.includes(appliedSearch) || // 구매자 검색
+      normalizedPhone.includes(normalizedSearch); // 전화번호 검색
+
     const isPendingOnly = isSelectionMode ? !payment.complete : true;
+
     return matchesFilter && matchesSearch && isPendingOnly;
   });
 
@@ -34,21 +41,30 @@ function PaymentLinkList() {
     return a.complete - b.complete;
   });
 
+  // 아이템 클릭 (선택/해제)
   const handleItemClick = (id) => {
     if (!isSelectionMode) return;
     toggleItemSelection(id);
   };
 
+  // 롱프레스 (선택 모드 진입)
   const handleLongPress = (id) => {
-    setSelectionMode(true);
-    toggleItemSelection(id);
+    // '미결제' 필터가 설정된 경우만 선택 모드 진입
+    if (filter === "미결제") {
+      setSelectionMode(true);
+      toggleItemSelection(id);
+    }
   };
 
+  // 키보드 단축키 (Ctrl + A, Esc)
   useEffect(() => {
     const handleKeyDown = (e) => {
+      if (filter !== "미결제") return; // 미결제 상태일 때만 동작
       if (e.ctrlKey && e.key === "a") {
         e.preventDefault();
-        payments.forEach((payment) => toggleItemSelection(payment.id));
+        payments
+          .filter((payment) => !payment.complete) // 미결제 아이템만 선택
+          .forEach((payment) => toggleItemSelection(payment.id));
         setSelectionMode(true);
       }
       if (e.key === "Escape") {
@@ -57,8 +73,9 @@ function PaymentLinkList() {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [toggleItemSelection, resetSelection]);
+  }, [toggleItemSelection, resetSelection, filter]);
 
+  // 필터 변경 핸들러
   const handleFilterChange = (type) => {
     setFilter((prev) => (prev === type ? "all" : type));
   };
@@ -67,6 +84,7 @@ function PaymentLinkList() {
     setSearchTerm(event.target.value);
   };
 
+  // 그리드 템플릿 동적 설정
   const gridTemplate = () => {
     if (isSelectionMode && appliedSearch) {
       return "40px 30px 1fr";
@@ -123,7 +141,7 @@ function PaymentLinkList() {
               item={payment}
               isSelected={selectedItems.includes(payment.id)}
               onClick={() => handleItemClick(payment.id)}
-              onLongPress={() => handleLongPress(payment.id)}
+              onLongPress={() => handleLongPress(payment.id)} // 롱프레스 조건 추가
             />
           ))
         ) : (
@@ -132,6 +150,7 @@ function PaymentLinkList() {
           </div>
         )}
       </div>
+      {/* 미결제 필터가 아닐 때만 필터 버튼 표시 */}
       {!isSelectionMode && !appliedSearch && (
         <div className={styles["select-wrapper"]}>
           <div className={styles["button-wrapper"]}>

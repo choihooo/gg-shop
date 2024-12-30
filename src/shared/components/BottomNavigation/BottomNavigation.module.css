@@ -71,3 +71,8 @@
   border: none;
   color: white;
 }
+
+.large {
+  width: 30px;
+  object-fit: cover;
+}

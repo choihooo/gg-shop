@@ -28,6 +28,10 @@ function BottomNavigation() {
     } else if (location.pathname.startsWith("/pay-list")) {
       setActiveTab("/pay-list");
     }
+    // /send-link 진입 시 탭 비활성화
+    else if (location.pathname.startsWith("/send-link")) {
+      setActiveTab("");
+    }
   }, [location.pathname]);
 
   const tabs = [
@@ -92,7 +96,9 @@ function BottomNavigation() {
             <img
               src={tab.icon}
               alt={tab.label}
-              className={styles["nav-icon"]}
+              className={`${styles["nav-icon"]} ${
+                tab.id === "link" ? styles["large"] : ""
+              }`}
             />
             <div className={styles["nav-label"]}>{tab.label}</div>
           </div>
