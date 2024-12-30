@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/Register.module.css";
 import RegisterForm from "../components/RegisterForm/RegisterForm";
@@ -20,7 +20,15 @@ function Register() {
   const handleInputChange = (name, value) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
+  useEffect(() => {
+    // Register 페이지에서만 body 스타일 변경
+    document.body.style.display = "block";
 
+    return () => {
+      // Register 페이지 벗어나면 원래대로 복구
+      document.body.style.display = "";
+    };
+  }, []);
   const handleVerifyClick = () => {
     if (!formData.phone) {
       setModalMessage("휴대폰 번호를 입력해주세요.");
