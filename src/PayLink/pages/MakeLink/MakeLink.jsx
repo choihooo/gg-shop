@@ -47,7 +47,7 @@ function MakeLink() {
     // 인풋 검증
     if (!buyerName || !phone) {
       setModalMessage("구매자 명과 연락처를 모두 입력해 주세요.");
-      setShowInputModal(true); // 기본 모달 표시
+      setShowInputModal(true); // 유효성 검사 실패 시 기본 모달 열기
       return;
     }
 
@@ -64,10 +64,25 @@ function MakeLink() {
     setShowModal(true);
   };
 
+  // 유효성 검사 실패 - 모달 닫기
+  const handleCloseModal = () => {
+    setShowInputModal(false);
+  };
+
+  // 링크 저장 완료 - 페이지 이동
   const handleCloseModalAndNavigate = () => {
     setShowInputModal(false);
-    navigate("/link"); // /link로 페이지 이동
+    navigate("/link");
   };
+
+  // 핸들러 결정 함수
+  const determineModalCloseHandler = () => {
+    if (modalMessage.includes("보낸 결제 링크에 저장되었습니다")) {
+      return handleCloseModalAndNavigate; // 링크 저장 완료 모달은 페이지 이동
+    }
+    return handleCloseModal; // 유효성 검사 실패는 모달만 닫기
+  };
+
   return (
     <div className={styles["link-list"]}>
       <div className={styles["link-list__items"]}>
@@ -106,7 +121,7 @@ function MakeLink() {
       <Modal
         isOpen={showInputModal}
         message={modalMessage}
-        onClose={handleCloseModalAndNavigate}
+        onClose={determineModalCloseHandler()} // 핸들러 동적으로 설정
       />
 
       {/* LinkModal (결제 금액 확인용) */}
