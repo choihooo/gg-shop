@@ -88,7 +88,7 @@
   border-radius: 10px;
   background: #d9d9d9;
   padding: 18px 0px;
-  gap: 5px;
+  gap: 14px;
   display: flex;
   flex-direction: column;
 }
@@ -101,9 +101,13 @@
   color: #757575;
   font-size: 12px;
   text-align: right;
-  line-height: 2;
 }
-
+.input-label-price {
+  color: #757575;
+  font-size: 12px;
+  text-align: right;
+  line-height: 1.6;
+}
 .input-url {
   margin-left: 4px;
   width: 220px;
@@ -128,7 +132,6 @@
 .input-call {
   color: #757575;
   font-size: 12px;
-  line-height: 2;
 }
 
 .input-price,
@@ -163,6 +166,5 @@
 .input-group__label {
   color: #5112ab;
   font-size: 12px;
-  line-height: 2;
   text-align: right;
 }

@@ -38,13 +38,9 @@ function MakeLink() {
 
   // 링크 복사 후 모달 표시 및 페이지 이동
   const handleLinkStore = () => {
+    setShowModal(false);
     setModalMessage("링크가 보낸 결제 링크에 저장되었습니다.");
     setShowInputModal(true); // 기본 모달 열기
-
-    setTimeout(() => {
-      setShowInputModal(false); // 모달 닫기
-      navigate("/link"); // 3초 뒤 링크 페이지로 이동
-    }, 1000);
   };
 
   const handleAddClick = () => {
@@ -68,11 +64,10 @@ function MakeLink() {
     setShowModal(true);
   };
 
-  const handleCloseModal = () => {
-    setShowModal(false);
+  const handleCloseModalAndNavigate = () => {
     setShowInputModal(false);
+    navigate("/link"); // /link로 페이지 이동
   };
-
   return (
     <div className={styles["link-list"]}>
       <div className={styles["link-list__items"]}>
@@ -111,7 +106,7 @@ function MakeLink() {
       <Modal
         isOpen={showInputModal}
         message={modalMessage}
-        onClose={handleCloseModal}
+        onClose={handleCloseModalAndNavigate}
       />
 
       {/* LinkModal (결제 금액 확인용) */}

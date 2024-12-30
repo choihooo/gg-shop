@@ -72,7 +72,7 @@ function DetailPageUp() {
       </div>
       <div className={styles["input-wrapper"]}>
         <div className={styles["input-group"]}>
-          <div className={styles["input-label"]}>합계 :</div>
+          <div className={styles["input-label-price"]}>합계 :</div>
           <div className={styles["input-price"]}>10,000,000원</div>
         </div>
         <div className={styles["input-group"]}>

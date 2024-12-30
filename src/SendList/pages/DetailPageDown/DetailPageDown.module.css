@@ -88,22 +88,26 @@
   border-radius: 10px;
   background: #d9d9d9;
   padding: 18px 0px;
-  gap: 6px;
+  gap: 14px;
   display: flex;
   flex-direction: column;
 }
 
 .input-group {
   display: grid;
-  grid-template-columns: 1fr 250px;
+  grid-template-columns: 90px 1fr;
 }
 .input-label {
   color: #757575;
   font-size: 12px;
   text-align: right;
-  line-height: 2;
 }
-
+.input-label-price {
+  color: #757575;
+  font-size: 12px;
+  text-align: right;
+  line-height: 1.6;
+}
 .input-url {
   margin-left: 4px;
   width: 220px;
@@ -123,7 +127,6 @@
 .input-call {
   color: #757575;
   font-size: 12px;
-  line-height: 2;
 }
 
 .input-price,
