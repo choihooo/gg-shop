@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // useNavigate 추가
+import { useNavigate } from "react-router-dom";
 import styles from "./AddProduct.module.css";
+import Modal from "../../../shared/components/Modal/Modal";
 
 function AddProduct() {
   const [quantity, setQuantity] = useState("1");
+  const [isModalOpen, setIsModalOpen] = useState(false); // 모달 상태 추가
   const price = 1000000;
-  const navigate = useNavigate(); // 네비게이트 훅 사용
+  const navigate = useNavigate();
 
   const handleQuantityChange = (e) => {
     let value = e.target.value;
@@ -33,16 +35,22 @@ function AddProduct() {
     navigate(-1);
   };
 
+  const handleAddProduct = () => {
+    setIsModalOpen(true); // 결제 상품 추가 시 모달 열기
+  };
+
+  const handleModalConfirm = () => {
+    setIsModalOpen(false); // 모달 닫기
+    navigate("/link"); // 링크 페이지로 이동
+  };
+
   const totalPrice = price * (parseInt(quantity, 10) || 1);
 
   return (
     <div className={styles["add-wrapper"]}>
       <div className={styles["add-product"]}>
         <div className={styles["add-product__header"]}>
-          <button
-            className={styles["close-button"]}
-            onClick={handleClose} // 닫기 버튼에 이벤트 추가
-          >
+          <button className={styles["close-button"]} onClick={handleClose}>
             <img src="/close.svg" alt="close" />
           </button>
         </div>
@@ -104,11 +112,21 @@ function AddProduct() {
             </span>
           </div>
         </div>
-        <button className={styles["add-product__button"]}>
+        <button
+          className={styles["add-product__button"]}
+          onClick={handleAddProduct} // 결제 상품 추가 버튼에 이벤트 연결
+        >
           결제 상품 <br />
           추가하기
         </button>
       </div>
+
+      {/* 모달 렌더링 */}
+      <Modal
+        isOpen={isModalOpen}
+        message="결제 상품을 추가하셨습니다."
+        onClose={handleModalConfirm}
+      />
     </div>
   );
 }
