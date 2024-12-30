@@ -89,7 +89,9 @@ function Register() {
 
   const closeModal = () => {
     setIsModalOpen(false);
+
     setModalMessage("");
+    navigate("/");
   };
 
   return (
