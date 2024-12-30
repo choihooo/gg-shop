@@ -3,7 +3,9 @@
   color: #757575;
   font-size: 12px;
 }
-
+.payment-item--open {
+  background-color: #cdcdcd;
+}
 .payment-item__summary {
   display: grid;
   grid-template-columns: 1fr 2fr 2fr;

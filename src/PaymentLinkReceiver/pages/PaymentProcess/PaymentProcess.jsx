@@ -31,6 +31,11 @@ const items = [
 function PaymentProcess() {
   const navigate = useNavigate();
 
+  // 결제 버튼 클릭 시 이동
+  const handlePayment = () => {
+    navigate("/order/complete");
+  };
+
   return (
     <div className={styles["wrapper"]}>
       <div>
@@ -57,7 +62,10 @@ function PaymentProcess() {
           </div>
         </div>
         <div className={styles["payment-process__actions"]}>
-          <button className={styles["payment-process__button--yes"]}>
+          <button
+            className={styles["payment-process__button--yes"]}
+            onClick={handlePayment} // 버튼 클릭 시 이동
+          >
             결제하기
           </button>
         </div>

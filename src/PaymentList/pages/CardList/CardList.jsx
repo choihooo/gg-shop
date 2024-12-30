@@ -30,7 +30,7 @@ const payments = [
 ];
 
 function CardList() {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(null); // 초기값을 null로 변경하여 모두 닫힌 상태로 시작
 
   const handleToggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);

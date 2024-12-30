@@ -27,24 +27,19 @@ function DetailPageUp() {
   const [isAlertModalOpen, setIsAlertModalOpen] = useState(false); // URL 생성 필요 알림 모달
   const [url, setUrl] = useState(""); // URL 상태 관리
   const [isUrlCreated, setIsUrlCreated] = useState(false); // URL 생성 여부
+  const [inputUrl, setInputUrl] = useState(""); // 사용자가 입력한 URL
 
-  // URL 생성 함수
-  const handleOpenModal = () => {
-    const generateUniqueId = () => {
-      return (
-        Math.random().toString(36).substring(2, 15) +
-        Math.random().toString(36).substring(2, 15) +
-        Math.random().toString(36).substring(2, 10)
-      );
-    };
-
-    const uniqueId = generateUniqueId();
-    const newUrl = `http://ghpay.kr/confirm/${uniqueId}`;
-    setUrl(newUrl);
-    setIsModalOpen(true);
+  // URL 입력 및 저장
+  const handleUrlChange = (e) => {
+    setInputUrl(e.target.value);
   };
 
-  const handleConfirm = () => {
+  const handleCreateUrl = () => {
+    if (inputUrl.trim() === "") {
+      setIsAlertModalOpen(true);
+      return;
+    }
+    setUrl(inputUrl); // 사용자가 입력한 URL을 저장
     setIsModalOpen(false);
     setIsUrlCreated(true);
   };
@@ -102,14 +97,14 @@ function DetailPageUp() {
             <div className={styles["input-group__input-wrapper"]}>
               <input
                 className={styles["input-group__input"]}
-                value={url}
-                readOnly
+                value={inputUrl}
+                onChange={handleUrlChange}
               ></input>
               <button
                 className={styles["input-group__button"]}
-                onClick={handleOpenModal}
+                onClick={handleCreateUrl}
               >
-                URL 만들기
+                URL 저장
               </button>
             </div>
           )}
@@ -132,14 +127,6 @@ function DetailPageUp() {
         </div>
       </div>
 
-      {/* URL 생성 모달 */}
-      <DetailModal
-        isOpen={isModalOpen}
-        message={`수령확인 URL 만들기는\n 유료 서비스입니다.\n매출 결제 금액 입금시\n 300원이 차감됩니다.`}
-        onClose={() => setIsModalOpen(false)}
-        onConfirm={handleConfirm}
-      />
-
       {/* 복사 완료 모달 */}
       <Modal
         isOpen={isCopyModalOpen}
@@ -150,7 +137,7 @@ function DetailPageUp() {
       {/* URL 미생성 알림 모달 */}
       <Modal
         isOpen={isAlertModalOpen}
-        message="URL을 먼저 생성해 주세요."
+        message="URL을 먼저 입력해 주세요."
         onClose={() => setIsAlertModalOpen(false)}
       />
     </div>

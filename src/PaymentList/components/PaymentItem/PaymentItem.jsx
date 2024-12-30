@@ -3,7 +3,11 @@ import styles from "./PaymentItem.module.css";
 
 function PaymentItem({ payment, isOpen, onToggle }) {
   return (
-    <div className={styles["payment-item"]}>
+    <div
+      className={`${styles["payment-item"]} ${
+        isOpen ? styles["payment-item--open"] : ""
+      }`}
+    >
       <div className={styles["payment-item__summary"]} onClick={onToggle}>
         <span className={styles["payment-item__buyer"]}>{payment.buyer}</span>
         <span className={styles["payment-item__phone"]}>{payment.phone}</span>

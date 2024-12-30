@@ -111,6 +111,11 @@
   font-size: 12px;
   word-wrap: break-word;
   white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .input-price {
